@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEMATULLAH AMIRI Portfolio</title>
+<title>Nematullah Amiri Portfolio</title>
 
 <style>
 
 /* GLOBAL */
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -24,7 +22,7 @@ nav {
     position: sticky;
     top: 0;
     background: #0a3d62;
-    padding: 15px 50px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -48,17 +46,10 @@ nav a {
 .hero img {
     width: 130px;
     border-radius: 50%;
-    margin-bottom: 15px;
 }
 
-.hero h1 {
-    font-size: 36px;
-    margin: 10px 0;
-}
-
-.hero p {
-    font-size: 18px;
-}
+.hero h1 { font-size: 36px; margin: 10px 0; }
+.hero p { font-size: 18px; }
 
 /* BUTTON */
 .btn {
@@ -77,22 +68,6 @@ section {
     padding: 60px 20px;
     max-width: 1000px;
     margin: auto;
-
-    /* FIXED: always visible initially */
-    opacity: 1;
-    transform: none;
-    transition: all 0.6s ease;
-}
-
-/* animation class */
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    color: #0a3d62;
-    margin-bottom: 20px;
 }
 
 /* PROJECT GRID */
@@ -110,34 +85,7 @@ h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card:hover {
-    transform: translateY(-8px);
-}
-
-/* SERVICES */
-ul {
-    line-height: 1.8;
-}
-
-/* CONTACT */
-#contact a {
-    color: #0a3d62;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* BACK TO TOP */
-#topBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #0a3d62;
-    color: white;
-    border: none;
-    padding: 10px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+.card:hover { transform: translateY(-8px); }
 
 /* FOOTER */
 footer {
@@ -147,6 +95,18 @@ footer {
     padding: 20px;
 }
 
+/* TOP BUTTON */
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0a3d62;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
 </style>
 </head>
 
@@ -154,20 +114,21 @@ footer {
 
 <!-- NAVBAR -->
 <nav>
-    <div><strong>NEMATULLAH AMIRI</strong></div>
+    <div><strong>Nematullah Amiri</strong></div>
     <div>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
+        <a href="#case">Case Study</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-
+    <img src="profile.jpg">
     <h1>Data Science & Project Management Expert</h1>
     <p>PMP Certified | 12+ Years in International Development</p>
+    <p>Helping organizations make data-driven decisions and deliver complex projects</p>
 
     <a href="#projects" class="btn">View Projects</a>
     <a href="cv.pdf" class="btn" download>Download CV</a>
@@ -175,92 +136,104 @@ footer {
 
 <!-- ABOUT -->
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-    PMP-certified professional with over 12 years of experience working with international organizations
-    including USAID, DFID and international consulting Firms including Delitte Consulting LLP and Adam Smith Internatinal ASI,. I specialize in data science, machine learning, and delivering complex 
-    projects in challenging environments.
-    </p>
+<h2>About Me</h2>
+<p>
+PMP-certified professional with 12+ years experience working with USAID, Deloitte, 
+and international organizations. I specialize in combining data science and project 
+management to solve complex problems in high-risk environments.
+</p>
+</section>
+
+<!-- SPECIALIZATION -->
+<section>
+<h2>Specialization</h2>
+<p>
+Applying data science to project management, predictive analytics, and decision support systems.
+</p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-    <h2>Projects</h2>
+<h2>Key Projects</h2>
 
-    <div class="projects">
+<div class="projects">
 
-        <div class="card">
-            <h3>Housing Price Prediction</h3>
-            <p>
-            Built machine learning models using Python and regression techniques to improve prediction accuracy.
-            </p>
-            <a href="https://github.com/yourusername/project1" target="_blank">View Project</a>
-        </div>
+<div class="card">
+<h3>Project Performance Prediction</h3>
+<p>ML model predicting project delays and risks.</p>
+<a href="#">View Project</a>
+</div>
 
-        <div class="card">
-            <h3>SpaceX Landing Prediction</h3>
-            <p>
-            Developed predictive models using data analysis and machine learning to forecast landing success.
-            </p>
-            <a href="https://github.com/yourusername/project2" target="_blank">View Project</a>
-        </div>
+<div class="card">
+<h3>Conflict Data Dashboard</h3>
+<p>Analyzed development data for decision-making.</p>
+<a href="#">View Project</a>
+</div>
 
-    </div>
+<div class="card">
+<h3>Resource Optimization</h3>
+<p>Optimized project resource allocation.</p>
+<a href="#">View Project</a>
+</div>
 
+<div class="card">
+<h3>KPI Dashboard</h3>
+<p>Real-time project tracking dashboard.</p>
+<a href="#">View Project</a>
+</div>
+
+<div class="card">
+<h3>Decision Support System</h3>
+<p>ML system for strategic decision-making.</p>
+<a href="#">View Project</a>
+</div>
+
+</div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-    <h2>Services</h2>
-    <ul>
-        <li>Data Analysis & Insights</li>
-        <li>Machine Learning Solutions</li>
-        <li>Project Management Consulting</li>
-        <li>Public Financial Management Consulting</li>
-    </ul>
+<!-- CASE STUDY -->
+<section id="case">
+<h2>Case Study: Housing Price Prediction</h2>
+
+<p><strong>Problem:</strong> Predict housing prices accurately.</p>
+
+<p><strong>Approach:</strong> Used regression models including Ridge and Polynomial regression.</p>
+
+<p><strong>Tools:</strong> Python, Pandas, Scikit-learn</p>
+
+<p><strong>Result:</strong> Improved prediction accuracy and model performance.</p>
+
+<a href="#">View Full Project</a>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact</h2>
+<h2>Contact</h2>
 
-    <p>Email: nemat_2929@yahoo.com | nematullahamiri2@gmail.com</p>
+<p>Email: your@email.com</p>
 
-    <p>
-        <a href="https://www.linkedin.com/in/nematullah-amiri-pmp%C2%AE-mba-12b50941"/</a> |
-        <a href="https://github.com/NematullahAmiri"</a>
-    </p>
+<p>
+<a href="#">LinkedIn</a> |
+<a href="#">GitHub</a>
+</p>
 
-    <a href="mailto:your@email.com" class="btn">Contact Me</a>
+<a href="mailto:your@email.com" class="btn">Contact Me</a>
+
 </section>
 
-<!-- BACK TO TOP -->
+<!-- TOP BUTTON -->
 <button id="topBtn">↑</button>
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 Nematullah Amiri</p>
+<p>© 2026 Nematullah Amiri</p>
 </footer>
 
 <script>
-
-/* SCROLL ANIMATION (SAFE VERSION) */
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-    sections.forEach(sec => {
-        const offset = sec.offsetTop - window.innerHeight + 100;
-        if (window.scrollY > offset) {
-            sec.classList.add("show");
-        }
-    });
-});
-
-/* BACK TO TOP */
 document.getElementById("topBtn").onclick = function() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 };
-
 </script>
 
 </body>
