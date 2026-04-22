@@ -3,30 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Nematullah Amiri Portfolio</title>
 
 <style>
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: #f8f9fc;
-    color: #333;
 }
 
 /* NAVBAR */
 nav {
+    position: sticky;
+    top: 0;
     background: #0a3d62;
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     color: white;
+    z-index: 1000;
 }
 
 nav a {
     color: white;
-    text-decoration: none;
     margin-left: 20px;
+    text-decoration: none;
 }
 
 /* HERO */
@@ -37,13 +44,10 @@ nav a {
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 40px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-top: 10px;
+.hero img {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 /* BUTTON */
@@ -55,21 +59,22 @@ nav a {
     color: #0a3d62;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: bold;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
     padding: 60px 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
 }
 
-/* TITLES */
-h2 {
-    color: #0a3d62;
-    margin-bottom: 20px;
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* PROJECT CARDS */
+/* PROJECTS */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -80,7 +85,23 @@ h2 {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* BACK TO TOP */
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0a3d62;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }
 
 /* FOOTER */
@@ -96,7 +117,7 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
     <div><strong>Nematullah Amiri</strong></div>
     <div>
@@ -109,60 +130,94 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
+    <img src="profile.jpg" alt="Profile">
     <h1>Data Science & Project Management Expert</h1>
-    <p>PMP Certified | 12+ Years in International Development</p>
-    <a href="#projects" class="btn">View My Work</a>
+    <p>PMP Certified | 12+ Years Experience</p>
+
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="cv.pdf" class="btn" download>Download CV</a>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
     <p>
-    PMP-certified professional with over 12 years of experience working with international organizations including USAID and Deloitte. 
-    I specialize in combining data science and project management to deliver measurable results in complex environments.
+    PMP-certified professional with 12+ years of experience working with USAID and Deloitte.
+    I specialize in data science and project delivery in complex environments.
     </p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
+
     <div class="projects">
 
         <div class="card">
             <h3>Housing Price Prediction</h3>
-            <p>Built machine learning models using Python and regression techniques to improve prediction accuracy.</p>
-            <a href="#" target="_blank">View Project</a>
+            <p>Machine learning model improving prediction accuracy.</p>
+            <a href="#">View Project</a>
         </div>
 
         <div class="card">
-            <h3>SpaceX Landing Prediction</h3>
-            <p>Developed predictive models using data analysis and machine learning to forecast landing success.</p>
-            <a href="#" target="_blank">View Project</a>
+            <h3>SpaceX Prediction</h3>
+            <p>Model predicting rocket landing success.</p>
+            <a href="#">View Project</a>
         </div>
 
     </div>
+
 </section>
 
 <!-- SERVICES -->
 <section id="services">
     <h2>Services</h2>
     <ul>
-        <li>Data Analysis & Insights</li>
-        <li>Machine Learning Solutions</li>
-        <li>Project Management Consulting</li>
+        <li>Data Analysis</li>
+        <li>Machine Learning</li>
+        <li>Project Consulting</li>
     </ul>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email: nemat_2929@yahoo.com | nematullahamiri2@gmail.com</p>
+    <p>Email: your@email.com</p>
+
+    <p>
+        <a href="#">LinkedIn</a> |
+        <a href="#">GitHub</a>
+    </p>
 </section>
+
+<button id="topBtn">↑</button>
 
 <!-- FOOTER -->
 <footer>
     <p>© 2026 Nematullah Amiri</p>
 </footer>
+
+<script>
+
+/* SCROLL ANIMATION */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 200;
+        if(top > offset){
+            sec.classList.add("show");
+        }
+    });
+});
+
+/* BACK TO TOP */
+document.getElementById("topBtn").onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
+</script>
 
 </body>
 </html>
