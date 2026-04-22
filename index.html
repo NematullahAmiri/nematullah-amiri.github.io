@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Nematullah Amiri Portfolio</title>
 
 <style>
 
+/* GLOBAL */
 html {
     scroll-behavior: smooth;
 }
@@ -16,6 +16,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: #f8f9fc;
+    color: #333;
 }
 
 /* NAVBAR */
@@ -40,40 +41,61 @@ nav a {
 .hero {
     background: linear-gradient(to right, #0a3d62, #3c6382);
     color: white;
-    padding: 100px 50px;
+    padding: 100px 20px;
     text-align: center;
 }
 
 .hero img {
-    width: 120px;
+    width: 130px;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 18px;
 }
 
 /* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 20px;
+    margin: 10px;
     padding: 12px 25px;
     background: white;
     color: #0a3d62;
     border-radius: 5px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* SECTIONS */
 section {
-    padding: 60px 50px;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+
+    /* FIXED: always visible initially */
     opacity: 1;
     transform: none;
+    transition: all 0.6s ease;
 }
 
+/* animation class */
 section.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* PROJECTS */
+h2 {
+    color: #0a3d62;
+    margin-bottom: 20px;
+}
+
+/* PROJECT GRID */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -85,10 +107,23 @@ section.show {
     padding: 20px;
     border-radius: 10px;
     transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+}
+
+/* SERVICES */
+ul {
+    line-height: 1.8;
+}
+
+/* CONTACT */
+#contact a {
+    color: #0a3d62;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* BACK TO TOP */
@@ -99,8 +134,9 @@ section.show {
     background: #0a3d62;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 12px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 /* FOOTER */
@@ -116,7 +152,7 @@ footer {
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
     <div><strong>Nematullah Amiri</strong></div>
     <div>
@@ -131,7 +167,7 @@ footer {
 <div class="hero">
     <img src="profile.jpg" alt="Profile">
     <h1>Data Science & Project Management Expert</h1>
-    <p>PMP Certified | 12+ Years Experience</p>
+    <p>PMP Certified | 12+ Years in International Development</p>
 
     <a href="#projects" class="btn">View Projects</a>
     <a href="cv.pdf" class="btn" download>Download CV</a>
@@ -141,8 +177,9 @@ footer {
 <section id="about">
     <h2>About Me</h2>
     <p>
-    PMP-certified professional with 12+ years of experience working with USAID and Deloitte.
-    I specialize in data science and project delivery in complex environments.
+    PMP-certified professional with over 12 years of experience working with international organizations 
+    including USAID and Deloitte. I specialize in data science, machine learning, and delivering complex 
+    projects in challenging environments.
     </p>
 </section>
 
@@ -154,14 +191,18 @@ footer {
 
         <div class="card">
             <h3>Housing Price Prediction</h3>
-            <p>Machine learning model improving prediction accuracy.</p>
-            <a href="#">View Project</a>
+            <p>
+            Built machine learning models using Python and regression techniques to improve prediction accuracy.
+            </p>
+            <a href="https://github.com/yourusername/project1" target="_blank">View Project</a>
         </div>
 
         <div class="card">
-            <h3>SpaceX Prediction</h3>
-            <p>Model predicting rocket landing success.</p>
-            <a href="#">View Project</a>
+            <h3>SpaceX Landing Prediction</h3>
+            <p>
+            Developed predictive models using data analysis and machine learning to forecast landing success.
+            </p>
+            <a href="https://github.com/yourusername/project2" target="_blank">View Project</a>
         </div>
 
     </div>
@@ -172,23 +213,27 @@ footer {
 <section id="services">
     <h2>Services</h2>
     <ul>
-        <li>Data Analysis</li>
-        <li>Machine Learning</li>
-        <li>Project Consulting</li>
+        <li>Data Analysis & Insights</li>
+        <li>Machine Learning Solutions</li>
+        <li>Project Management Consulting</li>
     </ul>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email: nemat_2929@yahoo.com | nematullahamiri2@gmail.com</p>
+
+    <p>Email: your@email.com</p>
 
     <p>
-        <a href="#">LinkedIn</a> |
-        <a href="#">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
     </p>
+
+    <a href="mailto:your@email.com" class="btn">Contact Me</a>
 </section>
 
+<!-- BACK TO TOP -->
 <button id="topBtn">↑</button>
 
 <!-- FOOTER -->
@@ -198,14 +243,13 @@ footer {
 
 <script>
 
-/* SCROLL ANIMATION */
+/* SCROLL ANIMATION (SAFE VERSION) */
 const sections = document.querySelectorAll("section");
 
 window.addEventListener("scroll", () => {
     sections.forEach(sec => {
-        const top = window.scrollY;
-        const offset = sec.offsetTop - 200;
-        if(top > offset){
+        const offset = sec.offsetTop - window.innerHeight + 100;
+        if (window.scrollY > offset) {
             sec.classList.add("show");
         }
     });
