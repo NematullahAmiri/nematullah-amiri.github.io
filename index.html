@@ -2,23 +2,18 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nematullah Amiri | Data Science, PFM & Project Management (PMP)</title>
+<title>Nematullah Amiri | Data Science & Project Management Consultant</title>
 
-<meta name="description" content="PMP-certified Data Science, Project Management and Public Financial Management expert with 12+ years experience in international development, consulting, and analytics.">
+<meta name="description" content="PMP-certified Data Science and Project Management professional with 14+ years of experience in consulting, PFM, and analytics.">
+<meta name="author" content="Nematullah Amiri">
 
 <style>
 
-/* =========================
-   ELITE CONSULTING DESIGN SYSTEM
-========================= */
-
-html {
-    scroll-behavior: smooth;
-}
+/* ===== GLOBAL ===== */
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -27,12 +22,12 @@ body {
     color: #1b2430;
 }
 
-/* TOP NAV */
+/* ===== NAV ===== */
 nav {
     position: sticky;
     top: 0;
     background: #0a1f44;
-    padding: 14px 40px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,11 +42,9 @@ nav a {
     font-size: 14px;
 }
 
-nav a:hover {
-    opacity: 0.8;
-}
+nav a:hover { opacity: 0.8; }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
     background: linear-gradient(135deg, #0a1f44, #143a6f);
     color: white;
@@ -59,134 +52,56 @@ nav a:hover {
     padding: 110px 20px;
 }
 
-.hero h1 {
-    font-size: 46px;
-    margin-bottom: 10px;
-}
+.hero h1 { font-size: 44px; }
+.hero p { max-width: 800px; margin: auto; }
 
-.hero p {
-    font-size: 18px;
-    max-width: 850px;
-    margin: auto;
-    opacity: 0.95;
-}
-
-/* HERO BADGES */
-.badges {
-    margin-top: 25px;
-}
-
-.badge {
-    display: inline-block;
-    margin: 5px;
-    padding: 6px 12px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 20px;
-    font-size: 13px;
-}
-
-/* CTA BUTTONS */
-.cta {
-    margin-top: 25px;
-}
-
+/* ===== BUTTONS ===== */
 .btn {
     display: inline-block;
     margin: 10px;
     padding: 12px 26px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
 }
 
-.btn-primary {
-    background: white;
-    color: #0a1f44;
-}
+.btn-primary { background: white; color: #0a1f44; }
+.btn-outline { border: 2px solid white; color: white; }
 
-.btn-outline {
-    border: 2px solid white;
-    color: white;
-}
-
-/* STATS BAR */
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: -30px;
-}
-
-.stat-box {
-    background: white;
-    padding: 20px 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    text-align: center;
-    min-width: 150px;
-}
-
-.stat-box h3 {
-    margin: 0;
-    color: #0a1f44;
-}
-
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 section {
     max-width: 1100px;
     margin: auto;
     padding: 70px 20px;
 }
 
-h2 {
-    font-size: 30px;
-    color: #0a1f44;
-    margin-bottom: 25px;
-}
+h2 { color: #0a1f44; }
 
-/* ABOUT */
-.about-box {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* PROJECTS */
+/* ===== CARDS ===== */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .card {
     background: white;
-    padding: 22px;
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-}
+.card:hover { transform: translateY(-6px); }
 
 .card a {
+    display: inline-block;
+    margin-top: 10px;
     color: #0a1f44;
     font-weight: bold;
-    text-decoration: none;
 }
 
-/* CASE STUDY */
-.case {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* CONTACT */
+/* ===== CONTACT ===== */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -201,17 +116,7 @@ h2 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.contact-card .icon {
-    font-size: 28px;
-}
-
-.contact-card a {
-    color: #0a1f44;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
     background: #0a1f44;
     color: white;
@@ -219,21 +124,7 @@ footer {
     padding: 20px;
 }
 
-/* TOP BUTTON */
-#topBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #0a1f44;
-    color: white;
-    border: none;
-    padding: 10px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
 </style>
-
 </head>
 
 <body>
@@ -244,145 +135,106 @@ footer {
     <div>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#case">Case Study</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/nematullah-amiri-12b50941" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/NematullahAmiri" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-
-    <h1>Data Science • PFM • Project Management</h1>
-
+    <h1>Data Science • Project Management • Consulting</h1>
     <p>
-        PMP-certified professional with 12+ years experience delivering complex projects in international development, consulting, and public financial systems.
+        PMP-certified professional with 14+ years of experience delivering data-driven solutions, managing complex projects, and supporting international development programs.
     </p>
 
-    <div class="badges">
-        <span class="badge">PMP Certified</span>
-        <span class="badge">Data Science</span>
-        <span class="badge">Public Financial Management</span>
-        <span class="badge">Consulting Expert</span>
-    </div>
-
-    <div class="cta">
-        <a href="#projects" class="btn btn-primary">View Work</a>
-        <a href="#contact" class="btn btn-outline">Hire Me</a>
-    </div>
-
-</div>
-
-<!-- STATS -->
-<div class="stats">
-    <div class="stat-box">
-        <h3>14+</h3>
-        <p>Years Experience</p>
-    </div>
-
-    <div class="stat-box">
-        <h3>PMP</h3>
-        <p>Certified</p>
-    </div>
-
-    <div class="stat-box">
-        <h3>USAID</h3>
-        <p>Consulting Experience</p>
-    </div>
-
-    <div class="stat-box">
-        <h3>Data</h3>
-        <p>Science Expert</p>
-    </div>
+    <a href="#projects" class="btn btn-primary">View My Work</a>
+    <a href="#contact" class="btn btn-outline">Hire Me</a>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
-
-<h2>About</h2>
-
-<div class="about-box">
+<h2>About Me</h2>
 
 <p>
-I am a PMP®-certified Project Management, Public Financial Management (PFM), and Data Science professional with over 14 years of experience delivering high-impact results across international development, government systems, and global consulting firms including USAID, DFID, Deloitte Consulting LLP, and Adam Smith International.
-
-My career has been built at the intersection of strategy, finance, and execution. From providing technical assistance in public financial management to leading complex multi-stakeholder projects, I have consistently helped organizations strengthen financial systems, improve performance, and deliver measurable outcomes in high-risk and resource-constrained environments.
-
-In parallel, I have expanded my expertise into data science and analytics—applying machine learning, predictive modeling, and data-driven frameworks to enhance decision-making, optimize project performance, and anticipate risks before they occur.
-
-I also provide remote consulting services in proposal development and business planning, supporting organizations to design competitive proposals, secure funding, and scale their operations. My work has contributed to the development of strategic documents, funding frameworks, and operational plans that drive sustainable growth.
-
-What differentiates me is the ability to bridge disciplines—combining public financial management, project delivery, and advanced analytics into a single, integrated approach that delivers both strategic insight and practical results.
-
-I am currently open to opportunities in Data Science, Project Management, Public Financial Management, and Consulting—particularly in complex, high-impact, and challenging environments where data-driven solutions can create real transformation.
+I am a PMP-certified professional specializing in Data Science, Project Management, and Public Financial Management (PFM).
+With over 14 years of experience working with organizations such as USAID, Deloitte, and government institutions, 
+I bring a unique combination of technical expertise and strategic leadership.
 </p>
 
-</div>
+<p>
+My focus is on using data to solve real-world problems — from predictive analytics to improving project performance and financial systems.
+</p>
 
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
- <section id="projects">
-  <h2>My Projects</h2>
+<h2>Featured Projects</h2>
 
-  <div class="project-card">
+<div class="projects">
 
-    <h3>Project Risk Prediction Analysis</h3>
+<div class="card">
+<h3>Project Risk Prediction Analysis</h3>
 
-    <p>
-      Developed a machine learning-based system to analyze and predict project risks using historical project data.
-      The model helps identify potential risk factors early and supports better decision-making in project management.
-    </p>
+<p><strong>Problem:</strong> Projects fail due to unidentified risks.</p>
+<p><strong>Solution:</strong> Built ML models to predict project risks.</p>
+<p><strong>Impact:</strong> Enables proactive decision-making and reduces failure rates.</p>
 
-    <p>
-      <b>Key Highlights:</b><br>
-      • Data cleaning and preprocessing<br>
-      • Exploratory Data Analysis (EDA)<br>
-      • Machine Learning models (Logistic Regression, Random Forest, XGBoost)<br>
-      • Model evaluation and performance comparison<br>
-      • Feature importance analysis for risk factors
-    </p>
+<p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
 
-    <p>
-      <b>Tools & Technologies:</b> Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
-    </p>
+<a href="https://github.com/NematullahAmiri/project-risk-prediction" target="_blank">View Project →</a>
+</div>
 
-    <a href="https://github.com/NematullahAmiri/project-risk-prediction" target="_blank">
-      🔗 View Project on GitHub
-    </a>
+<div class="card">
+<h3>Housing Price Prediction Model</h3>
 
-  </div>
+<p><strong>Problem:</strong> Difficulty estimating property prices accurately.</p>
+<p><strong>Solution:</strong> Built regression models for price prediction.</p>
+<p><strong>Impact:</strong> Supports investment and pricing decisions.</p>
+
+<p><strong>Tech:</strong> Python, Regression Models</p>
+
+<a href="#">View Project →</a>
+</div>
+
+</div>
 
 </section>
 
+<!-- SERVICES -->
+<section id="services">
+<h2>Consulting Services</h2>
+
+<ul>
+<li>Data Science & Machine Learning Solutions</li>
+<li>Project Risk Analysis & PMO Setup</li>
+<li>Public Financial Management Advisory</li>
+<li>Business Plans & Proposal Development</li>
+</ul>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-
 <h2>Contact</h2>
 
 <div class="contact-grid">
 
 <div class="contact-card">
-<div class="icon">📧</div>
 <h3>Email</h3>
-<p><a href="mailto:nematullahamiri2@gmail.com">Send Email</a></p>
+<p><a href="mailto:nematullahamiri2@gmail.com">nematullahamiri2@gmail.com</a></p>
 </div>
 
 <div class="contact-card">
-<div class="icon">💼</div>
 <h3>LinkedIn</h3>
-<p><a href="#">Profile</a></p>
+<p><a href="https://www.linkedin.com/in/nematullah-amiri-12b50941" target="_blank">View Profile</a></p>
 </div>
 
 <div class="contact-card">
-<div class="icon">💻</div>
 <h3>GitHub</h3>
-<p><a href="#">Projects</a></p>
+<p><a href="https://github.com/NematullahAmiri" target="_blank">View Projects</a></p>
 </div>
 
 </div>
@@ -391,16 +243,8 @@ I am currently open to opportunities in Data Science, Project Management, Public
 
 <!-- FOOTER -->
 <footer>
-<p>© 2026 Nematullah Amiri | Elite Portfolio</p>
+<p>© 2026 Nematullah Amiri | Professional Portfolio</p>
 </footer>
-
-<button id="topBtn">↑</button>
-
-<script>
-document.getElementById("topBtn").onclick = function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-</script>
 
 </body>
 </html>
