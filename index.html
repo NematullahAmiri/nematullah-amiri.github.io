@@ -1,127 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nematullah Amiri | Data Science & Project Management Consultant</title>
+<title>Nematullah Amiri | Business Intelligence & Project Analytics Consultant</title>
 
-<meta name="description" content="PMP-certified Data Science and Project Management professional with 14+ years of experience in consulting, PFM, and analytics.">
+<meta name="description" content="Business Intelligence and Project Analytics Consultant helping organizations transform data into strategic decisions through dashboards, forecasting, analytics, and reporting automation.">
+<meta name="keywords" content="Business Intelligence, Data Analytics, Power BI, Project Analytics, Dashboard Development, SQL, Python, PMO, Forecasting">
 <meta name="author" content="Nematullah Amiri">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== GLOBAL ===== */
-html { scroll-behavior: smooth; }
-
-body {
+/* ===== RESET ===== */
+* {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4f6fb;
-    color: #1b2430;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ===== NAV ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 90px 0;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.section-subtitle {
+    max-width: 750px;
+    color: #475569;
+    margin-bottom: 50px;
+}
+
+/* ===== NAVBAR ===== */
 nav {
     position: sticky;
     top: 0;
-    background: #0a1f44;
-    padding: 15px 40px;
+    z-index: 1000;
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
-    z-index: 1000;
+    padding: 18px 0;
 }
 
-nav a {
+.logo {
+    font-size: 20px;
+    font-weight: 800;
     color: white;
-    margin-left: 18px;
+}
+
+.nav-links a {
+    color: white;
     text-decoration: none;
-    font-size: 14px;
-}
-
-nav a:hover { opacity: 0.8; }
-
-/* ===== HERO ===== */
-.hero {
-    background: linear-gradient(135deg, #0a1f44, #143a6f);
-    color: white;
-    text-align: center;
-    padding: 110px 20px;
-}
-
-.hero h1 { font-size: 44px; }
-.hero p { max-width: 800px; margin: auto; }
-
-/* ===== BUTTONS ===== */
-.btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 26px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-primary { background: white; color: #0a1f44; }
-.btn-outline { border: 2px solid white; color: white; }
-
-/* ===== SECTIONS ===== */
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 70px 20px;
-}
-
-h2 { color: #0a1f44; }
-
-/* ===== CARDS ===== */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-left: 24px;
+    font-size: 15px;
     transition: 0.3s;
 }
 
-.card:hover { transform: translateY(-6px); }
+.nav-links a:hover {
+    opacity: 0.8;
+}
 
-.card a {
+/* ===== HERO ===== */
+.hero {
+    background: linear-gradient(135deg, #07152b, #123d75);
+    color: white;
+    padding: 120px 0 110px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    color: #d7e1f0;
+    margin-bottom: 35px;
+}
+
+.hero-highlight {
+    color: #93c5fd;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.badge {
+    background: rgba(255,255,255,0.1);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s;
     display: inline-block;
-    margin-top: 10px;
-    color: #0a1f44;
-    font-weight: bold;
+}
+
+.btn-primary {
+    background: white;
+    color: #0b2345;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid rgba(255,255,255,0.35);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.08);
+    padding: 35px;
+    border-radius: 22px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-card h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.hero-card ul {
+    list-style: none;
+}
+
+.hero-card li {
+    margin-bottom: 14px;
+    color: #dbeafe;
+}
+
+/* ===== TRUST SECTION ===== */
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.trust-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    text-align: center;
+}
+
+.trust-card h3 {
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+/* ===== ABOUT ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.about-card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.about-card h3 {
+    margin-bottom: 20px;
+}
+
+/* ===== SERVICES ===== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+.service-card h3 {
+    margin-bottom: 18px;
+    color: #0f172a;
+}
+
+.service-card ul {
+    padding-left: 18px;
+    color: #475569;
+}
+
+/* ===== PROJECTS ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 28px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-content {
+    padding: 28px;
+}
+
+.project-tag {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.project-content h3 {
+    margin-bottom: 16px;
+}
+
+.project-list {
+    margin: 20px 0;
+    padding-left: 18px;
+    color: #475569;
+}
+
+.tech-stack {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #334155;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 22px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* ===== CTA ===== */
+.cta {
+    background: linear-gradient(135deg, #0b2345, #123d75);
+    color: white;
+    text-align: center;
+    border-radius: 24px;
+    padding: 70px 30px;
+}
+
+.cta h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    max-width: 700px;
+    margin: auto auto 35px;
+    color: #d7e1f0;
 }
 
 /* ===== CONTACT ===== */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
 }
 
 .contact-card {
     background: white;
-    padding: 25px;
+    padding: 35px;
+    border-radius: 18px;
     text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.contact-card h3 {
+    margin-bottom: 16px;
+}
+
+.contact-card a {
+    text-decoration: none;
+    color: #1d4ed8;
+    word-break: break-word;
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background: #0a1f44;
-    color: white;
+    background: #07152b;
+    color: #cbd5e1;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
+    margin-top: 80px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+.hero-grid {
+    grid-template-columns: 1fr;
+}
+
+.hero h1 {
+    font-size: 42px;
+}
+
+.nav-wrapper {
+    flex-direction: column;
+    gap: 18px;
+}
+
+.nav-links {
+    text-align: center;
+}
+
+.nav-links a {
+    margin: 0 10px;
+}
+
+}
+
+@media (max-width: 600px) {
+
+.hero {
+    padding: 90px 0;
+}
+
+.hero h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
 }
 
 </style>
@@ -129,150 +425,371 @@ footer {
 
 <body>
 
-<!-- NAV -->
+<!-- ===== NAVIGATION ===== -->
 <nav>
-    <div><strong>Nematullah Amiri</strong></div>
-    <div>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="https://www.linkedin.com/in/nematullah-amiri-12b50941" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/NematullahAmiri" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </div>
+<div class="container nav-wrapper">
+<div class="logo">Nematullah Amiri</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+<a href="https://www.linkedin.com/in/nematullah-amiri-12b50941" target="_blank">LinkedIn</a>
+<a href="https://github.com/NematullahAmiri" target="_blank">GitHub</a>
+</div>
+</div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Business Intelligence & Project Analytics Consultant.</h1>
-    <p>
-        Helping organizations transform data into strategic decisions through analytics, dashboards, forecasting, and project intelligence.
-    </p>
+<!-- ===== HERO ===== -->
+<section class="hero">
+<div class="container hero-grid">
 
-    <a href="#projects" class="btn btn-primary">View My Work</a>
-    <a href="#contact" class="btn btn-outline">Hire Me</a>
+<div>
+<h1>
+Business Intelligence & <span class="hero-highlight">Project Analytics</span> Consultant
+</h1>
+
+<p>
+Helping organizations transform operational data into strategic decisions through analytics, dashboards, forecasting, and reporting automation.
+</p>
+
+<div class="hero-badges">
+<div class="badge">PMP® Certified</div>
+<div class="badge">14+ Years Experience</div>
+<div class="badge">Data Analytics</div>
+<div class="badge">Business Intelligence</div>
+<div class="badge">PMO Strategy</div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
-<h2>About Me</h2>
+<div class="hero-buttons">
+<a href="#projects" class="btn btn-primary">View Portfolio</a>
+<a href="#contact" class="btn btn-outline">Hire Me</a>
+</div>
+</div>
 
-<p style="text-align: justify;">
-  As a PMP-certified professional with over 14 years of experience at the intersection of Data Science, Project Management, and Public Financial Management (PFM), I have helped drive measurable impact for organizations including USAID, Deloitte, and government institutions.
-</p>
-<p style="text-align: justify;">
-  I specialize in transforming data into decisions — from predictive analytics that anticipate risks, to performance strategies that elevate project outcomes, and financial system reforms that enhance public accountability. My approach combines technical rigor with strategic leadership to solve real-world problems that matter.
-</p>
+<div class="hero-card">
+<h3>What I Help Organizations With</h3>
+<ul>
+<li>✔ Executive dashboards & KPI reporting</li>
+<li>✔ Data analytics & forecasting solutions</li>
+<li>✔ Project risk analysis & PMO reporting</li>
+<li>✔ Business intelligence & operational insights</li>
+<li>✔ Reporting automation & data transformation</li>
+<li>✔ Strategic analytics for decision-making</li>
+</ul>
+</div>
 
+</div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ===== TRUST ===== -->
+<section>
+<div class="container">
+<h2>Trusted Professional Experience</h2>
+<p class="section-subtitle">
+Experienced in delivering analytics, consulting, and project leadership support for international development organizations, government institutions, and consulting firms.
+</p>
+
+<div class="trust-grid">
+<div class="trust-card">
+<h3>USAID / Deloitte</h3>
+<p>Project coordination, reporting, and operational support.</p>
+</div>
+
+<div class="trust-card">
+<h3>Adam Smith International</h3>
+<p>Public financial management and strategic support initiatives.</p>
+</div>
+
+<div class="trust-card">
+<h3>Government Institutions</h3>
+<p>Performance monitoring, policy support, and operational coordination.</p>
+</div>
+
+<div class="trust-card">
+<h3>International Consulting</h3>
+<p>Cross-functional collaboration and project delivery management.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+<div class="container">
+<h2>About Me</h2>
+<p class="section-subtitle">
+I combine business intelligence, analytics, and project leadership to help organizations make better operational and strategic decisions.
+</p>
+
+<div class="about-grid">
+
+<div class="about-card">
+<h3>Professional Background</h3>
+<p>
+I am a PMP-certified professional with 14+ years of experience working across data analytics, project management, consulting, and public financial management.
+</p>
+<br>
+<p>
+My experience includes supporting international development programs, government institutions, and operational initiatives requiring data-driven decision-making and performance optimization.
+</p>
+</div>
+
+<div class="about-card">
+<h3>Core Expertise</h3>
+<ul>
+<li>Business Intelligence & KPI Dashboards</li>
+<li>Data Analytics & Forecasting</li>
+<li>Project Risk Analytics</li>
+<li>Executive Reporting Systems</li>
+<li>Operational Performance Analysis</li>
+<li>SQL, Python, Power BI & Excel</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+<div class="container">
+<h2>Professional Services</h2>
+<p class="section-subtitle">
+Practical analytics and reporting solutions designed to improve visibility, efficiency, and business decision-making.
+</p>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>Business Intelligence & Dashboards</h3>
+<ul>
+<li>Executive KPI dashboards</li>
+<li>Power BI reporting systems</li>
+<li>Performance monitoring</li>
+<li>Interactive business insights</li>
+</ul>
+</div>
+
+<div class="service-card">
+<h3>Data Analytics & Forecasting</h3>
+<ul>
+<li>Trend analysis</li>
+<li>Predictive analytics</li>
+<li>Business forecasting</li>
+<li>Decision-support analytics</li>
+</ul>
+</div>
+
+<div class="service-card">
+<h3>Project & Risk Analytics</h3>
+<ul>
+<li>Project risk prediction</li>
+<li>PMO reporting systems</li>
+<li>Performance tracking</li>
+<li>Operational risk analysis</li>
+</ul>
+</div>
+
+<div class="service-card">
+<h3>Reporting Automation</h3>
+<ul>
+<li>Excel automation</li>
+<li>SQL-based reporting</li>
+<li>Data cleaning & transformation</li>
+<li>Workflow optimization</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
 <section id="projects">
-<h2>Featured Projects</h2>
+<div class="container">
+<h2>Featured Analytics Projects</h2>
+<p class="section-subtitle">
+Business-focused analytics projects demonstrating forecasting, operational intelligence, risk analytics, and decision-support capabilities.
+</p>
 
-<div class="projects">
+<div class="projects-grid">
 
-<div class="card">
+<!-- PROJECT 1 -->
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Dashboard analytics visualization">
+
+<div class="project-content">
+<div class="project-tag">Project Analytics</div>
+
 <h3>Project Risk Prediction Analysis</h3>
 
-<p><strong>Problem:</strong> Projects fail due to unidentified risks.</p>
-<p><strong>Solution:</strong> Built ML models to predict project risks and features that has direct impact on projects risk level.</p>
-<p><strong>Impact:</strong> Enables proactive decision-making and reduces failure rates.</p>
-
-<p><strong>Tech:</strong> Python, Scikit-learn, XGBoost, Random Forest, SMOTE, SHAP</p>
-
-<a href="https://github.com/NematullahAmiri/project-risk-prediction" target="_blank">View Project →</a>
-</div>
-
-    <div class="card">
-<h3>IMF-World-Economic-Outlook--2026 </h3>
-
-<p><strong>Problem:</strong> Understanding global economic patterns and country risk requires systematic data analysis.</p>
-
-<p><strong>Solution:</strong> Applied five analytical approaches on 199 countries (2016-2030): Descriptive (trends), Diagnostic (drivers), Predictive (forecasts), Prescriptive (policies), Classification (risk tiers).</p>
-
-<p><strong>Impact:</strong> Achieved 87% accuracy predicting recession risk, identified India as fastest-growing major economy (8.7% in 2026), and provided country-specific policy prescriptions.</p>
-
-<p><strong>Tech:</strong> Python, Pandas, Scikit-learn, Gradient Boosting, Random Forest, Logistic Regression, K-Means, Matplotlib</p>
-
-<a href="https://github.com/NematullahAmiri/IMF-World-Economic-Outlook--2026" target="_blank">View Project →</a>
-</div>
-
-<div class="card">
-<h3>Financial Fraud Detection</h3>
-
-<p><strong>Problem:</strong> Financial institutions face extreme class imbalance (0.11% fraud rate) and sophisticated account takeover fraud patterns, making traditional detection methods ineffective.</p>
-<p><strong>Solution:</strong> Built an end-to-end machine learning pipeline with SMOTE for imbalance handling, engineered 30+ predictive features, and optimized threshold for business needs.</p>
-<p><strong>Impact:</strong> Achieves 99.58% precision and 99.44% recall, capturing nearly all fraudulent transactions while maintaining minimal false positives.</p>
-
-<p><strong>Tech:</strong> Python, Scikit-learn, XGBoost, Random Forest, SMOTE, SHAP</p>
-
-<a href="https://github.com/NematullahAmiri/Financial-Fraud-Detection" target="_blank">View Project →</a>
-</div>
-
-<div class="card">
-<h3>Online Retail Performance Analysis</h3>
-
-<p><strong>Objective:</strong> Diagnose revenue leakage, customer concentration risk, and geographic dependency in an online retail business operating across 43 countries.</p>
-
-<p><strong>Approach:</strong> Conducted end-to-end exploratory analysis on 818K+ transactions, evaluating KPIs, customer segmentation, product economics, temporal patterns, and international performance.</p>
-
-<p><strong>Outcome:</strong> Identified 15.8% cancellation rate (£1.1M recoverable), 85.1% UK revenue concentration, and 23.1% revenue from top 5 customers. Delivered prioritized recommendations to reduce operational risk and drive international expansion.</p>
-
-<p><strong>Tech Stack:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter</p>
-
-<a href="https://github.com/NematullahAmiri/Online-Retail-Performance-Analysis" target="_blank">View Project →</a>
-</div>
-   
-</div>
-
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-<h2>Consulting Services</h2>
-
-<ul>
-<li>Business Intelligence & Dashboards
-KPI tracking dashboards
-Power BI reporting systems
-Executive analytics</li>
-<li>Project Risk Analysis & PMO Setup</li>
-<li>Public Financial Management Advisory</li>
-<li>Business Plans & Proposal Development</li>
+<ul class="project-list">
+<li>Developed ML models to identify project risk patterns</li>
+<li>Enabled proactive project monitoring and decision-making</li>
+<li>Analyzed key drivers impacting project performance</li>
 </ul>
 
+<p class="tech-stack">
+<strong>Tools:</strong> Python, Scikit-learn, XGBoost, Random Forest, SHAP
+</p>
+
+<a class="project-link" href="https://github.com/NematullahAmiri/project-risk-prediction" target="_blank">
+View Project →
+</a>
+</div>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200&auto=format&fit=crop" alt="Global economic analysis">
+
+<div class="project-content">
+<div class="project-tag">Economic Analytics</div>
+
+<h3>IMF World Economic Outlook Analysis</h3>
+
+<ul class="project-list">
+<li>Analyzed economic indicators across 199 countries</li>
+<li>Built recession risk prediction and classification models</li>
+<li>Delivered policy-oriented analytical recommendations</li>
+</ul>
+
+<p class="tech-stack">
+<strong>Tools:</strong> Python, Pandas, Scikit-learn, Gradient Boosting, K-Means
+</p>
+
+<a class="project-link" href="https://github.com/NematullahAmiri/IMF-World-Economic-Outlook--2026" target="_blank">
+View Project →
+</a>
+</div>
+</div>
+
+<!-- PROJECT 3 -->
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="Fraud detection analytics">
+
+<div class="project-content">
+<div class="project-tag">Fraud Detection</div>
+
+<h3>Financial Fraud Detection System</h3>
+
+<ul class="project-list">
+<li>Built fraud detection pipeline for imbalanced transaction data</li>
+<li>Achieved high fraud precision and recall performance</li>
+<li>Optimized threshold strategies to reduce false positives</li>
+</ul>
+
+<p class="tech-stack">
+<strong>Tools:</strong> Python, XGBoost, SMOTE, Random Forest, SHAP
+</p>
+
+<a class="project-link" href="https://github.com/NematullahAmiri/Financial-Fraud-Detection" target="_blank">
+View Project →
+</a>
+</div>
+</div>
+
+<!-- PROJECT 4 -->
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Retail business analytics dashboard">
+
+<div class="project-content">
+<div class="project-tag">Business Intelligence</div>
+
+<h3>Online Retail Performance Analysis</h3>
+
+<ul class="project-list">
+<li>Analyzed 818K+ retail transactions across 43 countries</li>
+<li>Identified revenue leakage and customer concentration risks</li>
+<li>Delivered strategic recommendations for business growth</li>
+</ul>
+
+<p class="tech-stack">
+<strong>Tools:</strong> Python, Pandas, NumPy, Matplotlib, Jupyter
+</p>
+
+<a class="project-link" href="https://github.com/NematullahAmiri/Online-Retail-Performance-Analysis" target="_blank">
+View Project →
+</a>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- CONTACT -->
+<!-- ===== CTA ===== -->
+<section>
+<div class="container">
+<div class="cta">
+<h2>Let’s Work Together</h2>
+
+<p>
+Available for remote analytics projects, dashboard development, reporting automation, business intelligence consulting, and project analytics support.
+</p>
+
+<a href="#contact" class="btn btn-primary">Contact Me</a>
+</div>
+</div>
+</section>
+
+<!-- ===== CONTACT ===== -->
 <section id="contact">
+<div class="container">
 <h2>Contact</h2>
+<p class="section-subtitle">
+Interested in working together or discussing a project? Feel free to connect.
+</p>
 
 <div class="contact-grid">
 
 <div class="contact-card">
-<h3>Email and Phone</h3>
-<p><a href="mailto:nematullahamiri2@gmail.com">nematullahamiri2@gmail.com  nemat_2929@yahoo.com
-WhatsApp:+93702721088</a></p>
+<h3>Email</h3>
+<p>
+<a href="mailto:nematullahamiri2@gmail.com">
+nematullahamiri2@gmail.com
+</a>
+</p>
 </div>
 
 <div class="contact-card">
 <h3>LinkedIn</h3>
-<p><a href="https://www.linkedin.com/in/nematullah-amiri-pmp%C2%AE-mba-12b50941/1" target="_blank">View Profile</a></p>
+<p>
+<a href="https://www.linkedin.com/in/nematullah-amiri-12b50941" target="_blank">
+View LinkedIn Profile
+</a>
+</p>
 </div>
 
 <div class="contact-card">
 <h3>GitHub</h3>
-<p><a href="https://github.com/NematullahAmiri" target="_blank">View Projects</a></p>
+<p>
+<a href="https://github.com/NematullahAmiri" target="_blank">
+Explore GitHub Projects
+</a>
+</p>
+</div>
+
+<div class="contact-card">
+<h3>WhatsApp</h3>
+<p>
+<a href="https://wa.me/93702721088" target="_blank">
+Chat on WhatsApp
+</a>
+</p>
 </div>
 
 </div>
-
+</div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
-<p>© 2026 Nematullah Amiri | Professional Portfolio</p>
+<p>
+© 2026 Nematullah Amiri | Business Intelligence & Project Analytics Consultant
+</p>
 </footer>
 
 </body>
