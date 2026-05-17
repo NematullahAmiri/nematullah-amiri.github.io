@@ -1,1064 +1,432 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Nematullah Amiri | Business Intelligence & Project Analytics Consultant</title>
-
-<meta name="description" content="PMP-certified Business Intelligence & Project Analytics Consultant specializing in dashboards, forecasting, analytics, and reporting automation." />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================
-RESET
-========================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Inter',sans-serif;
-background:#040b1c;
-color:#e2e8f0;
-line-height:1.7;
-overflow-x:hidden;
-}
-
-img{
-width:100%;
-display:block;
-}
-
-.container{
-width:90%;
-max-width:1280px;
-margin:auto;
-}
-
-section{
-padding:100px 0;
-}
-
-h1,h2,h3,h4{
-line-height:1.2;
-}
-
-h2{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.section-subtitle{
-max-width:760px;
-margin-bottom:50px;
-color:#94a3b8;
-}
-
-/* =========================
-BACKGROUND EFFECT
-========================= */
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top right, rgba(59,130,246,0.14), transparent 25%),
-radial-gradient(circle at bottom left, rgba(59,130,246,0.12), transparent 30%);
-z-index:-1;
-}
-
-/* =========================
-NAVBAR
-========================= */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-z-index:1000;
-background:rgba(4,11,28,0.85);
-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.nav-wrapper{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 0;
-}
-
-.logo{
-font-size:22px;
-font-weight:800;
-color:#60a5fa;
-letter-spacing:1px;
-}
-
-.nav-links a{
-text-decoration:none;
-color:#dbeafe;
-margin-left:28px;
-font-size:14px;
-font-weight:600;
-transition:0.3s;
-}
-
-.nav-links a:hover{
-color:#60a5fa;
-}
-
-/* =========================
-HERO
-========================= */
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-background:
-radial-gradient(circle at top right, rgba(59,130,246,0.18), transparent 30%),
-linear-gradient(135deg,#020817,#07152b 45%,#0b2345);
-position:relative;
-overflow:hidden;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1.1fr 0.9fr;
-gap:60px;
-align-items:center;
-}
-
-.hero-subtitle{
-color:#60a5fa;
-font-size:14px;
-font-weight:700;
-letter-spacing:2px;
-margin-bottom:20px;
-text-transform:uppercase;
-}
-
-.hero h1{
-font-size:64px;
-margin-bottom:24px;
-font-weight:800;
-}
-
-.hero-highlight{
-color:#60a5fa;
-}
-
-.hero p{
-font-size:18px;
-color:#cbd5e1;
-margin-bottom:34px;
-max-width:700px;
-}
-
-.hero-buttons{
-display:flex;
-flex-wrap:wrap;
-gap:18px;
-margin-bottom:40px;
-}
-
-.btn{
-padding:15px 28px;
-border-radius:12px;
-text-decoration:none;
-font-weight:700;
-display:inline-block;
-transition:0.3s;
-}
-
-.btn-primary{
-background:linear-gradient(135deg,#2563eb,#60a5fa);
-color:white;
-box-shadow:0 0 30px rgba(59,130,246,0.4);
-}
-
-.btn-primary:hover{
-transform:translateY(-4px);
-}
-
-.btn-outline{
-border:1px solid rgba(255,255,255,0.15);
-color:white;
-background:rgba(255,255,255,0.04);
-}
-
-.btn-outline:hover{
-background:rgba(255,255,255,0.08);
-}
-
-.stats-row{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-margin-top:25px;
-}
-
-.stat-card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(14px);
-padding:24px;
-border-radius:18px;
-text-align:center;
-}
-
-.stat-card h3{
-font-size:30px;
-margin-bottom:8px;
-color:#60a5fa;
-}
-
-.stat-card p{
-font-size:14px;
-color:#cbd5e1;
-}
-
-/* =========================
-DASHBOARD
-========================= */
-
-.dashboard-panel{
-display:flex;
-flex-direction:column;
-gap:22px;
-}
-
-.dashboard-card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(14px);
-border-radius:22px;
-padding:24px;
-box-shadow:0 0 40px rgba(59,130,246,0.12);
-}
-
-.dashboard-card h4{
-margin-bottom:20px;
-color:#e2e8f0;
-}
-
-.large-card{
-height:230px;
-}
-
-.chart-line{
-height:130px;
-border-radius:14px;
-background:linear-gradient(
-180deg,
-rgba(59,130,246,0.7),
-transparent
-);
-}
-
-.dashboard-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:22px;
-}
-
-.circle-chart{
-width:120px;
-height:120px;
-border-radius:50%;
-border:12px solid #3b82f6;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:800;
-font-size:24px;
-margin:auto;
-}
-
-.bar-chart{
-height:120px;
-border-radius:14px;
-background:linear-gradient(
-to top,
-#3b82f6,
-transparent
-);
-}
-
-/* =========================
-CARDS
-========================= */
-
-.glass-card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(14px);
-border-radius:22px;
-}
-
-/* =========================
-ABOUT
-========================= */
-
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-}
-
-.about-card{
-padding:36px;
-}
-
-.about-card h3{
-margin-bottom:20px;
-font-size:24px;
-}
-
-.about-card ul{
-padding-left:20px;
-}
-
-.about-card li{
-margin-bottom:12px;
-color:#cbd5e1;
-}
-
-/* =========================
-SERVICES
-========================= */
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:26px;
-}
-
-.service-card{
-padding:34px;
-transition:0.4s ease;
-}
-
-.service-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 40px rgba(59,130,246,0.15);
-}
-
-.service-card h3{
-margin-bottom:18px;
-font-size:22px;
-}
-
-.service-card ul{
-padding-left:18px;
-color:#cbd5e1;
-}
-
-/* =========================
-PROJECTS
-========================= */
-
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-gap:28px;
-}
-
-.project-card{
-overflow:hidden;
-transition:0.4s ease;
-}
-
-.project-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 45px rgba(59,130,246,0.18);
-}
-
-.project-content{
-padding:28px;
-}
-
-.project-tag{
-display:inline-block;
-padding:8px 14px;
-background:rgba(59,130,246,0.15);
-color:#60a5fa;
-border-radius:999px;
-font-size:13px;
-font-weight:700;
-margin-bottom:18px;
-}
-
-.project-content h3{
-margin-bottom:16px;
-}
-
-.project-list{
-padding-left:18px;
-margin:20px 0;
-color:#cbd5e1;
-}
-
-.project-link{
-display:inline-block;
-margin-top:20px;
-color:#60a5fa;
-font-weight:700;
-text-decoration:none;
-}
-
-/* =========================
-CTA
-========================= */
-
-.cta{
-padding:70px 40px;
-text-align:center;
-}
-
-.cta h2{
-margin-bottom:20px;
-}
-
-.cta p{
-max-width:760px;
-margin:auto auto 35px;
-color:#cbd5e1;
-}
-
-/* =========================
-CONTACT
-========================= */
-
-.contact-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:24px;
-}
-
-.contact-card{
-padding:34px;
-text-align:center;
-}
-
-.contact-card h3{
-margin-bottom:16px;
-}
-
-.contact-card a{
-color:#60a5fa;
-text-decoration:none;
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer{
-padding:40px 20px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,0.05);
-margin-top:60px;
-color:#94a3b8;
-}
-
-/* =========================
-ANIMATION
-========================= */
-
-.hidden{
-opacity:0;
-transform:translateY(40px);
-transition:all 1s ease;
-}
-
-.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* =========================
-RESPONSIVE
-========================= */
-
-@media(max-width:980px){
-
-.hero-grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:48px;
-}
-
-.about-grid{
-grid-template-columns:1fr;
-}
-
-.stats-row{
-grid-template-columns:1fr 1fr;
-}
-
-.nav-wrapper{
-flex-direction:column;
-gap:18px;
-}
-
-.nav-links{
-text-align:center;
-}
-
-}
-
-@media(max-width:640px){
-
-.hero h1{
-font-size:38px;
-}
-
-h2{
-font-size:32px;
-}
-
-.stats-row{
-grid-template-columns:1fr;
-}
-
-.dashboard-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- =========================
-NAVBAR
-========================= -->
-
-<nav>
-<div class="container nav-wrapper">
-
-<div class="logo">
-NEMATULLAH AMIRI
-</div>
-
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-
-<a href="https://www.linkedin.com/in/nematullah-amiri-12b50941" target="_blank">
-LinkedIn
-</a>
-
-<a href="https://github.com/NematullahAmiri" target="_blank">
-GitHub
-</a>
-</div>
-
-</div>
-</nav>
-
-<!-- =========================
-HERO
-========================= -->
-
-<section class="hero">
-
-<div class="container hero-grid">
-
-<div>
-
-<div class="hero-subtitle">
-PMP CERTIFIED PROFESSIONAL
-</div>
-
-<h1>
-Transforming Data Into
-<span class="hero-highlight">
-Strategic Decisions
-</span>
-</h1>
-
-<p>
-Helping organizations transform operational data into strategic insights through business intelligence, analytics, forecasting, automation, and project performance reporting.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#projects" class="btn btn-primary">
-View Portfolio
-</a>
-
-<a href="#contact" class="btn btn-outline">
-Hire Me
-</a>
-
-</div>
-
-<div class="stats-row">
-
-<div class="stat-card">
-<h3>50+</h3>
-<p>Projects Managed</p>
-</div>
-
-<div class="stat-card">
-<h3>14+</h3>
-<p>Years Experience</p>
-</div>
-
-<div class="stat-card">
-<h3>$30M+</h3>
-<p>Budget Oversight</p>
-</div>
-
-<div class="stat-card">
-<h3>98%</h3>
-<p>Client Satisfaction</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- DASHBOARD -->
-
-<div class="dashboard-panel">
-
-<div class="dashboard-card large-card">
-<h4>Project Performance</h4>
-<div class="chart-line"></div>
-</div>
-
-<div class="dashboard-grid">
-
-<div class="dashboard-card">
-<h4>Budget Efficiency</h4>
-<div class="circle-chart">
-72%
-</div>
-</div>
-
-<div class="dashboard-card">
-<h4>Forecasting Analytics</h4>
-<div class="bar-chart"></div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-ABOUT
-========================= -->
-
-<section id="about">
-
-<div class="container">
-
-<h2>About Me</h2>
-
-<p class="section-subtitle">
-PMP-certified professional with 14+ years of experience across project management, analytics, consulting, business intelligence, and operational performance optimization.
-</p>
-
-<div class="about-grid">
-
-<div class="about-card glass-card hidden">
-
-<h3>Professional Background</h3>
-
-<p>
-I help organizations transform complex operational and project data into meaningful insights that support strategic decision-making, reporting efficiency, and performance optimization.
-</p>
-
-<br>
-
-<p>
-My experience includes working with international organizations, consulting firms, government institutions, and cross-functional operational teams.
-</p>
-
-</div>
-
-<div class="about-card glass-card hidden">
-
-<h3>Core Expertise</h3>
-
-<ul>
-<li>Business Intelligence & KPI Dashboards</li>
-<li>Project Analytics & Forecasting</li>
-<li>Power BI & Executive Reporting</li>
-<li>Operational Performance Analysis</li>
-<li>Risk & PMO Analytics</li>
-<li>Python, SQL & Automation</li>
-<li>Data Visualization & Insights</li>
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-SERVICES
-========================= -->
-
-<section id="services">
-
-<div class="container">
-
-<h2>Professional Services</h2>
-
-<p class="section-subtitle">
-Advanced analytics and reporting solutions designed to improve visibility, operational efficiency, and executive decision-making.
-</p>
-
-<div class="services-grid">
-
-<div class="service-card glass-card hidden">
-
-<h3>Business Intelligence</h3>
-
-<ul>
-<li>Executive dashboards</li>
-<li>KPI reporting systems</li>
-<li>Interactive Power BI solutions</li>
-<li>Operational insights</li>
-</ul>
-
-</div>
-
-<div class="service-card glass-card hidden">
-
-<h3>Data Analytics & Forecasting</h3>
-
-<ul>
-<li>Predictive analytics</li>
-<li>Trend analysis</li>
-<li>Forecasting models</li>
-<li>Decision-support analytics</li>
-</ul>
-
-</div>
-
-<div class="service-card glass-card hidden">
-
-<h3>Project & Risk Analytics</h3>
-
-<ul>
-<li>PMO reporting</li>
-<li>Project risk prediction</li>
-<li>Performance monitoring</li>
-<li>Operational risk analysis</li>
-</ul>
-
-</div>
-
-<div class="service-card glass-card hidden">
-
-<h3>Reporting Automation</h3>
-
-<ul>
-<li>Excel automation</li>
-<li>SQL-based reporting</li>
-<li>Workflow optimization</li>
-<li>Data transformation</li>
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-PROJECTS
-========================= -->
-
-<section id="projects">
-
-<div class="container">
-
-<h2>Featured Analytics Projects</h2>
-
-<p class="section-subtitle">
-Business-focused analytics and machine learning projects demonstrating forecasting, operational intelligence, financial analysis, and decision-support capabilities.
-</p>
-
-<div class="projects-grid">
-
-<!-- PROJECT -->
-
-<div class="project-card glass-card hidden">
-
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Analytics dashboard">
-
-<div class="project-content">
-
-<div class="project-tag">
-Project Analytics
-</div>
-
-<h3>Project Risk Prediction Analysis</h3>
-
-<ul class="project-list">
-<li>Machine learning risk prediction models</li>
-<li>Project performance monitoring</li>
-<li>Strategic decision-support analytics</li>
-</ul>
-
-<p>
-<strong>Tools:</strong>
-Python, XGBoost, SHAP, Random Forest
-</p>
-
-<a href="https://github.com/NematullahAmiri/project-risk-prediction"
-target="_blank"
-class="project-link">
-View Project →
-</a>
-
-</div>
-
-</div>
-
-<!-- PROJECT -->
-
-<div class="project-card glass-card hidden">
-
-<img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200&auto=format&fit=crop" alt="Economic analysis">
-
-<div class="project-content">
-
-<div class="project-tag">
-Economic Analytics
-</div>
-
-<h3>IMF Economic Outlook Analysis</h3>
-
-<ul class="project-list">
-<li>Analysis across 199 countries</li>
-<li>Recession prediction modeling</li>
-<li>Policy-oriented insights</li>
-</ul>
-
-<p>
-<strong>Tools:</strong>
-Python, Pandas, Gradient Boosting
-</p>
-
-<a href="https://github.com/NematullahAmiri/IMF-World-Economic-Outlook--2026"
-target="_blank"
-class="project-link">
-View Project →
-</a>
-
-</div>
-
-</div>
-
-<!-- PROJECT -->
-
-<div class="project-card glass-card hidden">
-
-<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="Fraud analytics">
-
-<div class="project-content">
-
-<div class="project-tag">
-Fraud Detection
-</div>
-
-<h3>Financial Fraud Detection System</h3>
-
-<ul class="project-list">
-<li>Fraud detection analytics pipeline</li>
-<li>Imbalanced data optimization</li>
-<li>False-positive reduction strategy</li>
-</ul>
-
-<p>
-<strong>Tools:</strong>
-Python, XGBoost, SMOTE
-</p>
-
-<a href="https://github.com/NematullahAmiri/Financial-Fraud-Detection"
-target="_blank"
-class="project-link">
-View Project →
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-CTA
-========================= -->
-
-<section>
-
-<div class="container">
-
-<div class="cta glass-card">
-
-<h2>
-Ready to Elevate Your Business Performance?
-</h2>
-
-<p>
-Available for remote analytics consulting, dashboard development, PMO reporting, data analytics, and business intelligence projects worldwide.
-</p>
-
-<a href="#contact" class="btn btn-primary">
-Contact Me
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-CONTACT
-========================= -->
-
-<section id="contact">
-
-<div class="container">
-
-<h2>Contact</h2>
-
-<p class="section-subtitle">
-Interested in collaboration, consulting, or remote project opportunities? Feel free to connect.
-</p>
-
-<div class="contact-grid">
-
-<div class="contact-card glass-card hidden">
-
-<h3>Email</h3>
-
-<a href="mailto:nemat_2929@yahoo.com">
-nemat_2929@yahoo.com
-</a>
-
-</div>
-
-<div class="contact-card glass-card hidden">
-
-<h3>LinkedIn</h3>
-
-<a href="https://www.linkedin.com/in/nematullah-amiri-12b50941"
-target="_blank">
-View LinkedIn
-</a>
-
-</div>
-
-<div class="contact-card glass-card hidden">
-
-<h3>GitHub</h3>
-
-<a href="https://github.com/NematullahAmiri"
-target="_blank">
-Explore Projects
-</a>
-
-</div>
-
-<div class="contact-card glass-card hidden">
-
-<h3>WhatsApp</h3>
-
-<a href="https://wa.me/93702721088"
-target="_blank">
-Chat on WhatsApp
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-FOOTER
-========================= -->
-
-<footer>
-
-<p>
-© 2026 Nematullah Amiri | Business Intelligence & Project Analytics Consultant
-</p>
-
-</footer>
-
-<!-- =========================
-SCRIPT
-========================= -->
-
-<script>
-
-const observer = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-entry.target.classList.add('show');
+export default function PortfolioWebsite() {
+  const projects = [
+    {
+      title: 'Project Risk Prediction Analysis',
+      category: 'Project Analytics',
+      description:
+        'Machine learning models for identifying project risk patterns and improving strategic decision-making.',
+      tools: 'Python, XGBoost, SHAP, Random Forest',
+      image:
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
+      link: 'https://github.com/NematullahAmiri/project-risk-prediction',
+    },
+    {
+      title: 'IMF Economic Outlook Analysis',
+      category: 'Economic Analytics',
+      description:
+        'Economic forecasting and recession prediction models using global macroeconomic indicators.',
+      tools: 'Python, Pandas, Gradient Boosting',
+      image:
+        'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200&auto=format&fit=crop',
+      link: 'https://github.com/NematullahAmiri/IMF-World-Economic-Outlook--2026',
+    },
+    {
+      title: 'Financial Fraud Detection System',
+      category: 'Fraud Detection',
+      description:
+        'Advanced fraud detection pipeline for financial transaction monitoring and anomaly detection.',
+      tools: 'Python, XGBoost, SMOTE',
+      image:
+        'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop',
+      link: 'https://github.com/NematullahAmiri/Financial-Fraud-Detection',
+    },
+  ];
+
+  const services = [
+    {
+      title: 'Business Intelligence',
+      items: [
+        'Executive KPI Dashboards',
+        'Power BI Reporting',
+        'Operational Insights',
+        'Interactive Analytics',
+      ],
+    },
+    {
+      title: 'Data Analytics & Forecasting',
+      items: [
+        'Predictive Analytics',
+        'Trend Analysis',
+        'Forecasting Models',
+        'Decision Support Analytics',
+      ],
+    },
+    {
+      title: 'Project & Risk Analytics',
+      items: [
+        'PMO Reporting',
+        'Project Risk Prediction',
+        'Performance Monitoring',
+        'Operational Risk Analysis',
+      ],
+    },
+    {
+      title: 'Reporting Automation',
+      items: [
+        'Excel Automation',
+        'SQL Reporting',
+        'Workflow Optimization',
+        'Data Transformation',
+      ],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#020817] text-white overflow-x-hidden">
+      {/* Background Glow */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      </div>
+
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-white/10 bg-[#020817]/70">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+          <h1 className="font-extrabold tracking-wider text-xl text-blue-400">
+            NEMATULLAH AMIRI
+          </h1>
+
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+            <a href="#about" className="hover:text-blue-400 transition">
+              About
+            </a>
+            <a href="#services" className="hover:text-blue-400 transition">
+              Services
+            </a>
+            <a href="#projects" className="hover:text-blue-400 transition">
+              Projects
+            </a>
+            <a href="#contact" className="hover:text-blue-400 transition">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center pt-32 pb-24 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
+          {/* Left */}
+          <div>
+            <p className="uppercase tracking-[0.25em] text-blue-400 text-sm font-semibold mb-6">
+              PMP Certified • Business Intelligence Consultant
+            </p>
+
+            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+              Transforming
+              <span className="block text-blue-400">
+                Data Into
+              </span>
+              Strategic Decisions
+            </h1>
+
+            <p className="text-slate-300 text-lg leading-8 max-w-2xl mb-10">
+              Helping organizations transform operational data into business intelligence,
+              forecasting systems, executive dashboards, and analytics-driven decision-making.
+            </p>
+
+            <div className="flex flex-wrap gap-5 mb-14">
+              <a
+                href="#projects"
+                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-400 font-semibold shadow-[0_0_40px_rgba(59,130,246,0.45)] hover:scale-105 transition"
+              >
+                View Portfolio
+              </a>
+
+              <a
+                href="#contact"
+                className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition"
+              >
+                Hire Me
+              </a>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+              {[
+                ['14+', 'Years Experience'],
+                ['50+', 'Projects'],
+                ['$30M+', 'Budget Oversight'],
+                ['98%', 'Client Satisfaction'],
+              ].map(([number, label]) => (
+                <div
+                  key={label}
+                  className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-5"
+                >
+                  <h3 className="text-3xl font-black text-blue-400 mb-2">
+                    {number}
+                  </h3>
+                  <p className="text-sm text-slate-300">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Dashboard */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-blue-500/10 blur-[80px] rounded-full" />
+
+            <div className="relative space-y-6">
+              {/* Main Card */}
+              <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl p-8 shadow-[0_0_50px_rgba(59,130,246,0.15)]">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="font-semibold text-lg">Project Performance</h3>
+                  <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse" />
+                </div>
+
+                <div className="h-52 rounded-3xl bg-gradient-to-t from-blue-500/50 to-transparent relative overflow-hidden">
+                  <div className="absolute bottom-0 left-0 right-0 flex items-end justify-around h-full px-6 pb-6">
+                    {[35, 55, 45, 70, 85, 60, 95].map((h, i) => (
+                      <div
+                        key={i}
+                        className="w-8 rounded-t-2xl bg-gradient-to-t from-cyan-400 to-blue-500"
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Small Cards */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
+                  <h3 className="font-semibold mb-6">Budget Efficiency</h3>
+
+                  <div className="relative w-36 h-36 mx-auto rounded-full border-[14px] border-blue-500 flex items-center justify-center text-3xl font-black text-blue-400 shadow-[0_0_40px_rgba(59,130,246,0.25)]">
+                    72%
+                  </div>
+                </div>
+
+                <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
+                  <h3 className="font-semibold mb-6">Forecasting</h3>
+
+                  <div className="space-y-4 pt-2">
+                    {[85, 65, 90, 50].map((w, i) => (
+                      <div key={i} className="h-4 rounded-full bg-white/10 overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-400"
+                          style={{ width: `${w}%` }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-28 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 max-w-3xl">
+            <p className="text-blue-400 font-semibold mb-4 uppercase tracking-[0.2em] text-sm">
+              About Me
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-black mb-6">
+              Business Intelligence & Project Analytics Professional
+            </h2>
+
+            <p className="text-slate-300 text-lg leading-8">
+              PMP-certified professional with 14+ years of experience across international development,
+              analytics, project management, business intelligence, and operational strategy.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl p-10">
+              <h3 className="text-2xl font-bold mb-6">Professional Background</h3>
+
+              <p className="text-slate-300 leading-8 mb-6">
+                Experienced working with USAID/Deloitte, Adam Smith International,
+                government institutions, and consulting initiatives requiring strategic reporting,
+                operational analytics, and executive decision-support systems.
+              </p>
+
+              <p className="text-slate-300 leading-8">
+                Specialized in transforming complex operational and project data into actionable insights,
+                dashboards, forecasting systems, and reporting automation.
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl p-10">
+              <h3 className="text-2xl font-bold mb-6">Core Expertise</h3>
+
+              <div className="grid grid-cols-2 gap-4 text-slate-300">
+                {[
+                  'Business Intelligence',
+                  'Power BI Dashboards',
+                  'Project Analytics',
+                  'Forecasting Models',
+                  'Risk Analytics',
+                  'Executive Reporting',
+                  'SQL & Python',
+                  'Data Visualization',
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="py-28 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 max-w-3xl">
+            <p className="text-blue-400 font-semibold mb-4 uppercase tracking-[0.2em] text-sm">
+              Services
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-black mb-6">
+              Professional Analytics Solutions
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl p-8 hover:-translate-y-3 transition duration-500 hover:shadow-[0_0_40px_rgba(59,130,246,0.2)]"
+              >
+                <h3 className="text-2xl font-bold mb-6">{service.title}</h3>
+
+                <ul className="space-y-4 text-slate-300">
+                  {service.items.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="py-28 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 max-w-3xl">
+            <p className="text-blue-400 font-semibold mb-4 uppercase tracking-[0.2em] text-sm">
+              Portfolio
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-black mb-6">
+              Featured Analytics Projects
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div
+                key={project.title}
+                className="group overflow-hidden rounded-[34px] border border-white/10 bg-white/5 backdrop-blur-2xl hover:-translate-y-3 transition duration-500 hover:shadow-[0_0_50px_rgba(59,130,246,0.18)]"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-64 w-full object-cover group-hover:scale-110 transition duration-700"
+                  />
+                </div>
+
+                <div className="p-8">
+                  <span className="inline-block px-4 py-2 rounded-full bg-blue-500/15 text-blue-400 text-sm font-semibold mb-5">
+                    {project.category}
+                  </span>
+
+                  <h3 className="text-2xl font-bold mb-5">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-slate-300 leading-8 mb-6">
+                    {project.description}
+                  </p>
+
+                  <p className="text-sm text-slate-400 mb-6">
+                    <span className="font-semibold text-white">Tools:</span> {project.tools}
+                  </p>
+
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    className="inline-flex items-center gap-2 text-blue-400 font-semibold hover:gap-4 transition-all"
+                  >
+                    View Project →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-2xl p-14 text-center shadow-[0_0_80px_rgba(59,130,246,0.12)]">
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
+            Let’s Build Smarter Analytics Systems
+          </h2>
+
+          <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-8 mb-10">
+            Available for remote consulting, dashboard development, business intelligence,
+            forecasting, project analytics, and reporting automation.
+          </p>
+
+          <a
+            href="#contact"
+            className="inline-block px-10 py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-400 font-bold shadow-[0_0_40px_rgba(59,130,246,0.4)] hover:scale-105 transition"
+          >
+            Contact Me
+          </a>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-28 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 max-w-3xl">
+            <p className="text-blue-400 font-semibold mb-4 uppercase tracking-[0.2em] text-sm">
+              Contact
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-black mb-6">
+              Let’s Connect
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+            {[
+              ['Email', 'mailto:nemat_2929@yahoo.com', 'nemat_2929@yahoo.com'],
+              ['LinkedIn', 'https://www.linkedin.com/in/nematullah-amiri-12b50941', 'View LinkedIn'],
+              ['GitHub', 'https://github.com/NematullahAmiri', 'Explore Projects'],
+              ['WhatsApp', 'https://wa.me/93702721088', 'Chat on WhatsApp'],
+            ].map(([title, href, label]) => (
+              <a
+                key={title}
+                href={href}
+                target="_blank"
+                className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl p-10 hover:-translate-y-2 transition hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+              >
+                <h3 className="text-2xl font-bold mb-5">{title}</h3>
+                <p className="text-blue-400 break-all">{label}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-10 text-center text-slate-400 text-sm">
+        © 2026 Nematullah Amiri | Business Intelligence & Project Analytics Consultant
+      </footer>
+    </div>
+  );
 }
-
-});
-
-});
-
-document.querySelectorAll('.hidden').forEach(el => {
-observer.observe(el);
-});
-
-</script>
-
-</body>
-</html>
